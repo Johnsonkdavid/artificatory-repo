@@ -17,7 +17,7 @@ node {
 
     stage('Push image') {
         /* Finally, we'll push the image with tags:*/
-        docker.withRegistry('https://974834890433.dkr.ecr.us-east-1.amazonaws.com/php-registery', 'ecr:us-east-1:ecr') {
+        docker.withRegistry('https://974834890433.dkr.ecr.us-east-1.amazonaws.com/php-registery', 'ecr:us-east-1:ecr-creds') {
             app.docker.image('php-registery').push('latest')
         }
     }
