@@ -12,7 +12,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("johnsonkdavid/artificatory-repo")
+        app = docker.build("demo")
     }
 
     stage('Push image') {
@@ -21,8 +21,7 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://974834890433.dkr.ecr.us-east-1.amazonaws.com/php-registery', 'ecr:us-east-1:ECR-credentials') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+            app.docker.image('demo').push('latest')
         }
     }
 }
