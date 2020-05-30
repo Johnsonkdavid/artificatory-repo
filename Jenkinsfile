@@ -20,4 +20,7 @@ node {
             app.push("latest")
         }
     }
+    stage('Cleaning up') {
+    	sh 'docker rmi demo'
+    	}	
 }
