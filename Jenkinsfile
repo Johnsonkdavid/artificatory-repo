@@ -12,13 +12,13 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build('php-registery')
+        app = docker.build("demo")
     }
 
     stage('Push image') {
-        /* Finally, we'll push the image with tags:*/
-        docker.withRegistry('https://974834890433.dkr.ecr.us-east-1.amazonaws.com/php-registery', 'ecr:us-east-1:ecr-creds') {
-            app.docker.image('php-registery').push('latest')
+        docker.withRegistry('https://260450533524.dkr.ecr.us-east-1.amazonaws.com/demo', 'ecr:us-east-1:ecr-id') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
         }
     }
 }
