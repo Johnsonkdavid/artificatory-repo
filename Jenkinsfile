@@ -22,6 +22,6 @@ node {
         }
     }
     stage('Cleaning up') {
-    	sh 'docker rmi ("demo-${env.BUILD_NUMBER}")'
+    	sh 'docker rmi ("demo-latest")'
     	}	
 }
