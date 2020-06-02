@@ -17,11 +17,11 @@ node {
 
     stage('Push image') {
         docker.withRegistry('https://260450533524.dkr.ecr.us-east-1.amazonaws.com/demo', 'ecr:us-east-1:ecr-id') {
-            docker.image('demo').push("demo-${env.BUILD_NUMBER}")
-            docker.image('demo').push("latest")
+            docker.image("demo:${env.BUILD_NUMBER}").push("demo-${env.BUILD_NUMBER}")
+            docker.image("demo:${env.BUILD_NUMBER}").push("latest")
         }
     }
     stage('Cleaning up') {
-    	sh 'docker rmi demo:latest'
+    	sh 'docker rmi ("demo:${env.BUILD_NUMBER}")'
     	}	
 }
