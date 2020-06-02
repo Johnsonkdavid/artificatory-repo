@@ -12,7 +12,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("demo")
+        app = docker.build("demo:${env.BUILD_NUMBER}")
     }
 
     stage('Push image') {
