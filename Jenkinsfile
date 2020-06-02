@@ -17,7 +17,8 @@ node {
 
     stage('Push image') {
         docker.withRegistry('https://260450533524.dkr.ecr.us-east-1.amazonaws.com/demo', 'ecr:us-east-1:ecr-id') {
-            docker.image('demo').push('latest')
+            docker.image('demo').push("${env.BUILD_NUMBER}")
+            docker.image('demo').push("latest")
         }
     }
     stage('Cleaning up') {
