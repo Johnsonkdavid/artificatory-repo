@@ -27,7 +27,7 @@ node {
 
     stage('SSH into deployment server'){
         sshagent(credentials : ['ssh-creds']) {
-        sh 'ssh -t -t root@100.26.178.221 -o StrictHostKeyChecking=no "/bin/bash < ./package.sh"'
+        sh 'ssh -t -t root@100.26.178.221 -o StrictHostKeyChecking=no "/bin/bash < /var/lib/jenkins/workspace/ecr-pipeline/package.sh"'
         }       
     }
 }
