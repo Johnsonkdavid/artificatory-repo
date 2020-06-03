@@ -22,6 +22,11 @@ node {
         }
     }
     stage('Cleaning up') {
-    	sh 'docker rmi demo:latest'
-    	}	
+        sh 'docker rmi demo:latest'
+        }
+
+    stage('SSH into deployment server')
+        sshagent(credentials : ['ssh-creds']) {
+        sh 'ssh -t -t root@100.26.178.221 -o StrictHostKeyChecking=no "echo pwd && mkdir -p /opt/docker"'
+        }       
 }
