@@ -1,4 +1,4 @@
 FROM php:7.0-apache
 COPY src/ /var/www/html
-EXPOSE 4545
+EXPOSE 80
 
