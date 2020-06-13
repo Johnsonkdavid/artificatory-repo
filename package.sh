@@ -34,7 +34,7 @@ aws ecr get-login-password --region us-east-1 | docker login --username AWS --pa
 
 docker pull 974834890433.dkr.ecr.us-east-1.amazonaws.com/demo:latest
 
-container_id=`docker ps -a |  grep 974834890433.dkr.ecr.us-east-1.amazonaws.com/demo | awk '{print $1}'`
+container_id=`docker ps -a |  grep test-app | awk '{print $1}'`
 
 echo $container_id
 
