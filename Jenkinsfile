@@ -23,6 +23,7 @@ node {
     }
     stage('Cleaning up') {
         sh 'docker rmi demo:latest'
+        sh 'docker rmi demo:("${env.BUILD_NUMBER}")'
         }
 
     stage('SSH into deployment server'){
