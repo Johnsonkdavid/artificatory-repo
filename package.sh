@@ -56,11 +56,11 @@ if [ -z "$container_id" ]
 then
       echo "\$container_id is empty"
 else
-      echo "\$var is NOT empty"
+      echo "\$container_id is NOT empty"
       for x in $container_id
       do
-      		docker stop $x && docker rm $x
-      done		
+                docker stop $x && docker rm $x
+      done
 
 fi
 
