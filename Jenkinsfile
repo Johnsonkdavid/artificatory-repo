@@ -16,7 +16,7 @@ node {
     }
 
     stage('Push image') {
-        docker.withRegistry('https://260450533524.dkr.ecr.us-east-1.amazonaws.com/demo', 'ecr:us-east-1:ecr-id') {
+        docker.withRegistry('https://974834890433.dkr.ecr.us-east-1.amazonaws.com/demo', 'ecr:us-east-1:ecr-id') {
             docker.image('demo').push("${env.BUILD_NUMBER}")
             docker.image('demo').push("latest")
         }
@@ -27,7 +27,7 @@ node {
 
     stage('SSH into deployment server'){
         sshagent(credentials : ['ssh-creds']) {
-        sh 'ssh -t -t root@100.26.178.221 -o StrictHostKeyChecking=no < package.sh'
+        sh 'ssh -t -t root@134.122.127.98 -o StrictHostKeyChecking=no < package.sh'
         }       
     }
 }
