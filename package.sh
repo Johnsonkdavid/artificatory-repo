@@ -54,9 +54,9 @@ docker run -d -P  --name test-app-`echo $$` $ecr_image
 
 if [ -z "$container_id" ]
 then
-      echo "\$container_id is empty"
+      echo "container_id is empty"
 else
-      echo "\$container_id is NOT empty"
+      echo "container_id is NOT empty"
       for x in $container_id
       do
                 docker stop $x && docker rm $x
