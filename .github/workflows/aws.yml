@@ -6,9 +6,9 @@ on:
       - master
 
 env:
-  AWS_REGION: eu-central-1               # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: 782063546026.dkr.ecr.eu-central-1.amazonaws.com/github-repo           # set this to your Amazon ECR repository name
-
+  AWS_REGION: eu-central-1               
+  ECR_REPOSITORY: 782063546026.dkr.ecr.eu-central-1.amazonaws.com/github-repo 
+  
 defaults:
   run:
     shell: bash
