@@ -30,6 +30,7 @@ jobs:
         with:
           aws-region: eu-central-1
           role-to-assume: ecr-role
+          role-skip-session-tagging: true
           
 
       - name: Login to Amazon ECR
