@@ -29,9 +29,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-region: eu-central-1
-          role-to-assume: ecr-role
-          role-skip-session-tagging: true
-          
+          role-to-assume: ecr-role          
 
       - name: Login to Amazon ECR
         id: login-ecr
