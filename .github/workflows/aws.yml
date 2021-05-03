@@ -30,6 +30,7 @@ jobs:
         with:
           aws-region: eu-central-1
           role-to-assume: ecr-role
+          role-duration-seconds: 1200
                     
 
       - name: Login to Amazon ECR
